@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo</title>
+  </head>
+  <body>
+    <div class="todo-header">
+      <h1 style="color: gold">Add Todos Here</h1>
+      <div class="d-grid gap-2 col-6 mx-auto">
+        <form #addtodo="ngForm" (ngSubmit)="onClickSubmit(addtodo.value)">
+          <span class="input-group-text" id="addon-wrapping">title</span>
+          <input
+            type="text"
+            name="title"
+            class="form-control"
+            placeholder="homework"
+            aria-label="title"
+            aria-describedby="addon-wrapping"
+            ngModel
+          />
+          <br />
+          <span class="input-group-text" id="addon-wrapping">body</span>
+          <input
+            type="text"
+            name="body"
+            class="form-control"
+            placeholder="complete math and science by monday"
+            aria-label="body"
+            aria-describedby="addon-wrapping"
+            ngModel
+          />
+          <input type="submit" value="submit" />
+        </form>
+      </div>
+      <!-- <button
+        type="button"
+        class="btn btn-success"
+        (click)="onSubmit(form.data)"
+      >
+        Add
+      </button> -->
+    </div>
+    <div class="todo-body">
+      <ul>
+        <li>Do math homework</li>
+        <li>Finish Angular project</li>
+        <li>Feed piggies</li>
+        <li>Eat food</li>
+        <li>Read before bed</li>
+      </ul>
+    </div>
+  </body>
+</html>
