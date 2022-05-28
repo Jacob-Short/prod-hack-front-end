@@ -25,11 +25,17 @@ export class TodosComponent implements OnInit {
   }
 
   onClickSubmit(data: any) {
-    alert('Entered Title:' + data.title + 'Entered body:' + data.body);
+    // alert('Entered Title:' + data.title + 'Entered body:' + data.body);
+    const todo: Todo = { id: 1, title: data.title, body: data.body };
+    this.addTodo(todo);
   }
 
   getTodos(): void {
     this.todos = this.todoService.getTodos();
+  }
+
+  addTodo(todo: Todo): void {
+    this.todos = [...this.todoService.getTodos(), todo];
   }
 
   ngOnInit(): void {

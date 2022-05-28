@@ -35,22 +35,18 @@
           <input type="submit" value="submit" />
         </form>
       </div>
-      <!-- <button
-        type="button"
-        class="btn btn-success"
-        (click)="onSubmit(form.data)"
-      >
-        Add
-      </button> -->
     </div>
     <div class="todo-body">
-      <ul>
-        <li>Do math homework</li>
-        <li>Finish Angular project</li>
-        <li>Feed piggies</li>
-        <li>Eat food</li>
-        <li>Read before bed</li>
-      </ul>
+      <div *ngFor="let todo of todos">  
+        <div class="card">
+          <h5 class="card-header">Featured</h5>
+          <div class="card-body">
+            <h5 class="card-title">{{ todo.title }}</h5>
+            <p class="card-text">{{ todo.body }}</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+      </div>
     </div>
   </body>
 </html>
