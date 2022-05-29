@@ -3,7 +3,9 @@
   }
   
   .todo-body {
-    display: flex;
+    /* display: flex; */
     justify-content: space-evenly;
+    text-align: center;
+
   }
   

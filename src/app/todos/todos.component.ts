@@ -20,10 +20,6 @@ export class TodosComponent implements OnInit {
 
   constructor(private todoService: TodoService) {}
 
-  onSubmit(todo: Todo): void {
-    this.todos = [...this.todos, todo];
-  }
-
   onClickSubmit(data: any) {
     // alert('Entered Title:' + data.title + 'Entered body:' + data.body);
     const todo: Todo = { id: 1, title: data.title, body: data.body };
@@ -35,7 +31,7 @@ export class TodosComponent implements OnInit {
   }
 
   addTodo(todo: Todo): void {
-    this.todos = [...this.todoService.getTodos(), todo];
+    this.todos = [todo, ...this.todoService.getTodos()];
   }
 
   ngOnInit(): void {
