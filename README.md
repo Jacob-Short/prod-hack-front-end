@@ -17,4 +17,6 @@ Connecting to back end:
 
     http: https://angular.io/guide/http
 
+Routing: https://angular.io/guide/router, https://angular.io/guide/router-tutorial
+
     

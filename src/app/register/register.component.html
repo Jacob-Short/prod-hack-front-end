@@ -7,11 +7,42 @@
     <title>Register</title>
   </head>
   <body>
-    <h1>Register</h1>
-    <input type="text" placeholder="username" />
-    <input type="text" placeholder="password" />
-    <a href="#">
-    <h3>Already have an account? Login Here!</h3>
-    </a>
+    <div class="register-body">
+      <h1 style="color: gold">Register</h1>
+      <div class="d-grid gap-2 col-6 mx-auto">
+        <form
+          #createmember="ngForm"
+          (ngSubmit)="onClickSubmit(createmember.value)"
+        >
+          <span class="input-group-text" id="addon-wrapping">Username</span>
+          <input
+            type="text"
+            name="username"
+            class="form-control"
+            placeholder="jeff123"
+            aria-label="username"
+            aria-describedby="addon-wrapping"
+            ngModel
+          />
+          <br />
+          <span class="input-group-text" id="addon-wrapping">Password</span>
+          <input
+            type="text"
+            name="password"
+            class="form-control"
+            placeholder="********"
+            aria-label="password"
+            aria-describedby="addon-wrapping"
+            ngModel
+          />
+          <button type="submit" value="submit" class="btn btn-success">
+            Register
+          </button>
+        </form>
+      </div>
+      <a href="/login">
+        <h3>Already have an account? Login Here!</h3>
+        </a>
+    </div>
   </body>
 </html>
