@@ -8,14 +8,6 @@ import { TodoService } from '../todo.service';
   styleUrls: ['./todos.component.css'],
 })
 export class TodosComponent implements OnInit {
-  data = [
-    {
-      id: 1,
-      title: 'homework',
-      body: 'need to complete problem set by sunday',
-    },
-    { id: 2, title: 'chores', body: 'need to do dishes and vacuum' },
-  ];
   todos: Todo[] = [];
 
   constructor(private todoService: TodoService) {}
@@ -27,11 +19,15 @@ export class TodosComponent implements OnInit {
   }
 
   getTodos(): void {
-    this.todos = this.todoService.getTodos();
+    this.todoService.getTodos().subscribe((res) => {
+      this.todos = res;
+    });
   }
 
   addTodo(todo: Todo): void {
-    this.todos = [todo, ...this.todoService.getTodos()];
+    this.todoService.addTodo(todo).subscribe((res) => {
+      console.log(res);
+    });
   }
 
   ngOnInit(): void {

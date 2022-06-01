@@ -8,3 +8,13 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The appli
 
 ### Recourses
 Forms: https://www.pluralsight.com/guides/how-to-submit-form-data-using-angular
+
+Onsubmit: https://www.pluralsight.com/guides/how-to-submit-form-data-using-angular
+
+Generating Service: https://www.pluralsight.com/guides/how-to-generate-a-service-using-the-angular-cli
+
+Connecting to back end:
+
+    http: https://angular.io/guide/http
+
+    
