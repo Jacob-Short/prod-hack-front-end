@@ -10,13 +10,16 @@
     <div class="todo-header">
       <h1 style="color: gold">Add Todos Here</h1>
       <div class="d-grid gap-2 col-6 mx-auto">
-        <form #addtodo="ngForm" (ngSubmit)="onClickSubmit(addtodo.value)">
+        <form
+          #addtodoform="ngForm"
+          (ngSubmit)="onClickSubmit(addtodoform.value); addtodoform.resetForm()"
+        >
           <span class="input-group-text" id="addon-wrapping">title</span>
           <input
             type="text"
             name="title"
             class="form-control"
-            placeholder="homework"
+            placeholder="{{ title }}"
             aria-label="title"
             aria-describedby="addon-wrapping"
             ngModel
@@ -27,7 +30,7 @@
             type="text"
             name="body"
             class="form-control"
-            placeholder="complete math and science by monday"
+            placeholder="{{ body }}"
             aria-label="body"
             aria-describedby="addon-wrapping"
             ngModel
