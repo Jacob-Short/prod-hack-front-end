@@ -9,6 +9,7 @@ import { TodoService } from '../todo.service';
 })
 export class TodosComponent implements OnInit {
   todos: Todo[] = [];
+  doneTodos: Todo[] = [];
   title: string = 'homework';
   body: string = 'mat-136 problem set by sunday night';
 
@@ -16,7 +17,7 @@ export class TodosComponent implements OnInit {
 
   onClickSubmit(data: any) {
     // alert('Entered Title:' + data.title + 'Entered body:' + data.body);
-    const todo: Todo = { title: data.title, body: data.body };
+    const todo: Todo = { id: 0, title: data.title, body: data.body };
     this.addTodo(todo);
   }
 
@@ -31,6 +32,20 @@ export class TodosComponent implements OnInit {
       this.getTodos();
     });
   }
+
+  markTodoCompleted(todo: Todo): void {
+    this.todoService.addTodo(todo).subscribe((res) => {
+      this.getTodos();
+    });
+  }
+
+  deleteTodo(todo: Todo): void {
+    this.todoService.deleteTodo(todo).subscribe((res) => {
+      console.log(res);
+      this.getTodos();
+    });
+  }
+
 
   ngOnInit(): void {
     this.getTodos();

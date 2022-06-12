@@ -23,6 +23,13 @@ export class TodoService {
 
   addTodo(todo: Todo): Observable<any> {
     return this.http.post<any>(this.baseUrl, todo);
-    // return TODOS;
+  }
+
+  markTodoDone(todo: Todo): Observable<any> {
+    return this.http.put<any>(this.baseUrl + `${todo.id}`, todo);
+  }
+
+  deleteTodo(todo: Todo): Observable<any> {
+    return this.http.delete<any>(this.baseUrl + `/${todo.id}`, todo);
   }
 }
